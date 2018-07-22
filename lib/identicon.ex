@@ -12,8 +12,8 @@ defmodule Identicon do
     %Identicon.Image{hex: hex}
   end
 
-  def pick_color(image) do
-    %Identicon.Image{hex: [r, g, b | _tail]} = image
-    [r, g, b]
+  def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do
+    # update a property on a map (image)
+    %Identicon.Image{image | color: {r, g, b}}
   end
 end
